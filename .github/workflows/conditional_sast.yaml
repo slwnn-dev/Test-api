@@ -2,8 +2,8 @@ name: 'Conditional workflow
 on:
   workflow_dispatch:
     inputs:
-      scanners:
-        description: 'Scan the code'
+      lang:
+        description: 'Programming language'
         required: true
         default: 'none'
 jobs:
