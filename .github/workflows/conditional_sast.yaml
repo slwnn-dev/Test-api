@@ -1,4 +1,4 @@
-name: 'Conditional workflow
+name: 'Conditional workflow'
 on:
   workflow_dispatch:
     inputs:
