@@ -9,12 +9,6 @@ on:
         default: 'none'
 
 jobs:
-  params:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Language'
-        run: echo "Input parameters: ${{ github.event.inputs.lang }}"
-
   go_sequence:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.lang == 'go' }}
