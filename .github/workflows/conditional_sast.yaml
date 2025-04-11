@@ -1,4 +1,5 @@
 name: 'Conditional workflow'
+
 on:
   workflow_dispatch:
     inputs:
@@ -6,16 +7,17 @@ on:
         description: 'Programming language'
         required: true
         default: 'none'
+
 jobs:
   params:
     runs-on: ubuntu-latest
     steps:
       - name: 'Language'
-        run: echo 'Input parameters: ${{ github.event.inputs.lang }}'
+        run: echo "Input parameters: ${{ github.event.inputs.lang }}"
 
   go_sequence:
     runs-on: ubuntu-latest
-    if: github.event.inputs.lang == 'go'
+    if: ${{ github.event.inputs.lang == 'go' }}
     env:
       GO111MODULE: on
     steps:
@@ -30,10 +32,9 @@ jobs:
         with:
           args: -fmt sarif -out reports/gosec.sarif ./...
 
-      #- name: 'Upload gosec report'
-      #  run: |
-      #    curl -X POST https://*/reports \
-      #      -H "Content-Type: application/sarif+json" \
-      #      --data-binary @reports/gosec.sarif
-
-
+      # Uncomment and configure the uploader as needed
+      # - name: 'Upload gosec report'
+      #   run: |
+      #     curl -X POST https://*/reports \
+      #       -H "Content-Type: application/sarif+json" \
+      #       --data-binary @reports/gosec.sarif
