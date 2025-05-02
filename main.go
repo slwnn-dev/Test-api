@@ -1,5 +1,5 @@
 package main
-//1122332221122
+//1
 
 import (
 	"fmt"
