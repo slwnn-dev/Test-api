@@ -1,5 +1,5 @@
 package main
-//11121q
+//11121
 import (
 	"database/sql"
 	"fmt"
