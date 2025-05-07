@@ -1,5 +1,5 @@
 package main
-//112211221212
+//1
 import (
 	"database/sql"
 	"fmt"
